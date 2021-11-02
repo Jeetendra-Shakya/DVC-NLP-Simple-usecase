@@ -1,6 +1,8 @@
-# dvc-project-template
+# dvc-NLP-simple-usecase
 DVC project template
 
+## Reference repository:
+[official referece repo](https://github.com/iterative/example-get-started)
 ## STEPS -
 
 ### STEP 01- Create a repository by using template repository
