@@ -4,6 +4,7 @@ import shutil
 from tqdm import tqdm
 import logging
 
+STAGE = "Templeate stage"
 
 logging.basicConfig(
     filename=os.path.join("logs", 'running_logs.log'), 
