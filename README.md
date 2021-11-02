@@ -34,3 +34,10 @@ dvc init
 ```
 
 ### STEP 06- commit and push the changes to the remote repository
+
+### extra commands - 
+
+echo "*.log" >> logs/.gitignore
+## to remove logs from git cache
+
+git rm --cached logs/running_logs.log
