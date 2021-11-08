@@ -1,47 +1,34 @@
-# dvc-NLP-simple-usecase
-DVC project template
+dvc-NLP-simple-usecase
+DVC NLP project
 
-## Reference repository:
-[official referece repo](https://github.com/iterative/example-get-started)
-[DVC STUDIO](https://studio.iterative.ai/)
+Reference repository:
+official reference repo
 
-[MY View](https://studio.iterative.ai/user/Jeetendra-Shakya/views/DVC-NLP-Simple-usecase-15pd8muk9m)
+DVC STUDIO
 
-## STEPS -
+MY View
 
-### STEP 01- Create a repository by using template repository
+Bag of Words- Krish Naik
 
-### STEP 02- Clone the new repository
+TF-IDF- Krish Naik
 
-### STEP 03- Create a conda environment after opening the repository in VSCODE
-
-```bash
+STEPS -
+STEP 01- Create a repository by using template repository
+STEP 02- Clone the new repository
+STEP 03- Create a conda environment after opening the repository in VSCODE
 conda create --prefix ./env python=3.7 -y
-```
-
-```bash
 conda activate ./env
-```
 OR
-```bash
+
 source activate ./env
-```
-
-### STEP 04- install the requirements
-```bash
+One shot create and activate environment
+conda create --prefix ./env python=3.7 -y && source activate ./env
+STEP 04- install the requirements
 pip install -r requirements.txt
-```
-
-### STEP 05- initialize the dvc project
-```bash
+STEP 05- initialize the dvc project
 dvc init
-```
-
-### STEP 06- commit and push the changes to the remote repository
-
-### extra commands - 
-
+STEP 06- commit and push the changes to the remote repository
+extra commands -
 echo "*.log" >> logs/.gitignore
-## to remove logs from git cache
-
 git rm --cached logs/running_logs.log
+updated by rohan
