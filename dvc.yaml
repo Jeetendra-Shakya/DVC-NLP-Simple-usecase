@@ -3,7 +3,7 @@ stages:
   prepare_data:
     cmd: python src/stage_01_prepare.py --config=configs/config.yaml --params=params.yaml
     deps:
-      - src/stage_01_prepare.py 
+      - src/stage_01_prepare.py
       - data/data.xml
       - src/utils/common.py
       - src/utils/data_mgmt.py
@@ -18,7 +18,7 @@ stages:
   featurize:
     cmd: python src/stage_02_featurization.py --config=configs/config.yaml --params=params.yaml
     deps:
-      - src/stage_02_featurization.py 
+      - src/stage_02_featurization.py
       - artifacts/prepared/train.tsv
       - artifacts/prepared/test.tsv
       - src/utils/common.py
@@ -34,7 +34,7 @@ stages:
   train:
     cmd: python src/stage_03_train.py --config=configs/config.yaml --params=params.yaml
     deps:
-      - src/stage_03_train.py 
+      - src/stage_03_train.py
       - artifacts/features/train.pkl
       - src/utils/common.py
       - configs/config.yaml
@@ -44,3 +44,27 @@ stages:
       - train.min_split
     outs:
       - artifacts/model/model.pkl
+
+  evaluate:
+    cmd: python src/stage_04_evaluate.py --config=configs/config.yaml
+    deps:
+      - src/stage_04_evaluate.py
+      - artifacts/features/test.pkl
+      - src/utils/common.py
+      - configs/config.yaml
+      - artifacts/model/model.pkl
+    metrics:
+      - scores.json:
+          cache: false
+    plots:
+      - prc.json:
+          cache: false
+          x: recall
+          y: precision
+      - roc.json:
+          cache: false
+          x: fpr
+          y: tpr
+
+  run_plots_command:
+    cmd: dvc plots diff
