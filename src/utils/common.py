@@ -28,7 +28,7 @@ def get_df(path_to_data: str, sep: str="\t") -> pd.DataFrame:
     return df
 
 def save_json(path, data):
-    with open(open, "w") as f:
+    with open(path, "w") as f:
         json.dump(data, f, indent=4)
 
-    logging.info(f"json file is saved at : {path}")
+    logging.info(f"json file saved at: {path}")
